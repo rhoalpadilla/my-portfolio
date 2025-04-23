@@ -20,7 +20,7 @@ const ImageGallery = () => {
   }, [images]);
 
   const { getRootProps, getInputProps } = useDropzone({
-    accept: 'image/*',
+    accept: { 'image/*': [] },
     onDrop: (acceptedFiles) => {
       setImages((prevImages) => [...prevImages, ...acceptedFiles]);
     },
